@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;todoMaker&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../httpServer" />
+      <root url="file://$PROJECT_DIR$/../newproject" />
+      <root url="file://$PROJECT_DIR$/../hello" />
+      <root url="file://$PROJECT_DIR$/../interfaces" />
+      <root url="file://$PROJECT_DIR$/../chatApplication" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

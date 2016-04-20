@@ -1,0 +1,26 @@
+.container{
+    width:80%;
+    margin: 0 auto;
+}
+
+.title{
+    width:40%;
+    margin: 0 auto;
+}
+
+.addTask{
+    width:30%;
+    margin: 0 auto;
+    margin-top:5%;
+
+}
+
+.todoList table{
+    width:30%;
+    margin: 0 auto;
+    margin-top:5%;
+}
+
+.todoList table td{
+    margin:10px;
+}
