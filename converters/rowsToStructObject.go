@@ -17,7 +17,7 @@ func ConvertRowsToStructObjects(rows *sql.Rows) []tableContent {
 		var r tableContent
 		err := rows.Scan(&r.TASKID, &r.TASK, &r.PRIORITY)
 		if err != nil {
-			errorHandler.DatabaseErrorHandler(err)
+			errorHandler.ErrorHandler(err)
 		}
 		dbData = append(dbData, r)
 	}

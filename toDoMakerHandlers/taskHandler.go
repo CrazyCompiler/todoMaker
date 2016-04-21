@@ -17,6 +17,7 @@ func AddTask(db *sql.DB) http.HandlerFunc {
 		priority := strings.Join(req.Form["priority"], "")
 		err := models.Add(db, task, priority)
 		if err != nil {
+			errorHandler.ErrorHandler(err)
 			res.WriteHeader(http.StatusInternalServerError)
 		}
 		res.WriteHeader(http.StatusCreated)
@@ -38,6 +39,7 @@ func DeleteTask(db *sql.DB) http.HandlerFunc {
 		task,err := strconv.Atoi(taskId)
 		err = models.Delete(db,task)
 		if err != nil {
+			errorHandler.ErrorHandler(err)
 			res.WriteHeader(http.StatusInternalServerError)
 		}
 		res.WriteHeader(http.StatusAccepted)
@@ -48,23 +50,33 @@ func UploadCsv(db *sql.DB) http.HandlerFunc{
 	return func(res http.ResponseWriter,req *http.Request) {
 		err := req.ParseMultipartForm(32 << 20)
 		if err != nil {
-			errorHandler.FileUploadErrorHandler(err)
+			errorHandler.ErrorHandler(err)
 		}
 		m := req.MultipartForm
+
 		files := m.File["uploadFile"]
 		for i,_ := range files{
 			file,err := files[i].Open()
 			defer file.Close()
 			if err != nil {
-				errorHandler.FileUploadErrorHandler(err)
+				errorHandler.ErrorHandler(err)
 			}
 			b1 := make([]byte, 32 << 20)
 			_,err = file.Read(b1)
-			seperatedData := fileReaders.ReadTaskCsv(string(b1))
+			if err != nil {
+				errorHandler.ErrorHandler(err)
+			}
+			seperatedData,err := fileReaders.ReadTaskCsv(string(b1))
+
+			if err != nil {
+				errorHandler.ErrorHandler(err)
+				res.WriteHeader(http.StatusBadRequest)
+			}
 
 			for _, each := range seperatedData {
 				err := models.Add(db,each["task"],each["priority"])
 				if err != nil {
+					errorHandler.ErrorHandler(err)
 					res.WriteHeader(http.StatusInternalServerError)
 					return
 				}

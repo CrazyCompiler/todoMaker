@@ -7,7 +7,9 @@ import (
 
 func CreateConnection(dbinfo string) *sql.DB {
 	db, err := sql.Open("postgres", dbinfo)
-	errorHandler.DatabaseErrorHandler(err)
+	if err != nil {
+		errorHandler.ErrorHandler(err)
+	}
 	db.Ping()
 	return db
 }

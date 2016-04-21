@@ -16,11 +16,13 @@ const (
 func Get(db *sql.DB) []byte {
 	rows, err := db.Query(dbSelectQuery)
 	if err != nil {
-		errorHandler.DatabaseErrorHandler(err)
+		errorHandler.ErrorHandler(err)
 	}
 	dbData := converters.ConvertRowsToStructObjects(rows)
 	data, err := json.Marshal(dbData)
-
+	if err != nil {
+		errorHandler.ErrorHandler(err)
+	}
 	return data
 }
 
@@ -28,7 +30,7 @@ func Add(db *sql.DB, task string, priority string) error {
 	var lastInsertId int
 	err := db.QueryRow(dbInsertQuery, task, priority).Scan(&lastInsertId)
 	if err != nil {
-		errorHandler.DatabaseErrorHandler(err)
+		errorHandler.ErrorHandler(err)
 		return err
 	}
 	return nil
