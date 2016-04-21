@@ -9,8 +9,9 @@ const (
 	DB_SCHEMA   = "todoMaker"
 )
 
-func CreateDbInfo()  string{
+func CreateDbInfo(dbConfig map[string]string)  string{
+
 	dbinfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable SEARCH_PATH=%s ",
-		DB_USER, DB_PASSWORD, DB_NAME, DB_SCHEMA)
+		dbConfig["DB_USER"],dbConfig["DB_PASSWORD"],dbConfig["DB_NAME"],dbConfig["DB_SCHEMA"])
 	return dbinfo
 }
