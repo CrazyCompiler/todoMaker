@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6e707c-caee-44ad-8685-f52ba14cea39" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/addTask.go" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/addTask.go" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/getAllTasks.go" afterPath="$PROJECT_DIR$/models/getAllTasks.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/todoMaker-svc/main.go" afterPath="$PROJECT_DIR$/app/todoMaker-svc/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/converters/rowsToStructObject.go" afterPath="$PROJECT_DIR$/converters/rowsToStructObject.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/createConenction.go" afterPath="$PROJECT_DIR$/database/createConenction.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/createDbInfo.go" afterPath="$PROJECT_DIR$/database/createDbInfo.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorHandler/databaseErrorHandler.go" afterPath="$PROJECT_DIR$/errorHandler/databaseErrorHandler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorHandler/fileReadErrorHandler.go" afterPath="$PROJECT_DIR$/errorHandler/fileReadErrorHandler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fileReaders/csvReader.go" afterPath="$PROJECT_DIR$/fileReaders/csvReader.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fileReaders/csvReader_test.go" afterPath="$PROJECT_DIR$/fileReaders/csvReader_test.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routers/route.go" afterPath="$PROJECT_DIR$/routers/route.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toDoMakerHandlers/addTask.go" afterPath="$PROJECT_DIR$/toDoMakerHandlers/addTask.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toDoMakerHandlers/addTask_test.go" afterPath="$PROJECT_DIR$/toDoMakerHandlers/addTask_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toDoMakerHandlers/getAllTasks.go" afterPath="$PROJECT_DIR$/toDoMakerHandlers/getAllTasks.go" />
     </list>
     <ignored path="chatApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/app/todoMaker-svc/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding>
                 <element signature="e#14#140#0" expanded="true" />
               </folding>
@@ -57,9 +43,11 @@
       <file leaf-file-name="route.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routers/route.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12195122">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="0.19512194">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#17#112#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +86,6 @@
         <option value="$PROJECT_DIR$/public/database.go" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/handlers/getAllTasks.go" />
-        <option value="$PROJECT_DIR$/routers/route.go" />
         <option value="$PROJECT_DIR$/server.go" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/database/createConenction.go" />
@@ -114,12 +101,13 @@
         <option value="$PROJECT_DIR$/toDoMakerHandlers/getAllTasks.go" />
         <option value="$PROJECT_DIR$/converters/rowsToStructObject.go" />
         <option value="$PROJECT_DIR$/modules/getAllTasks.go" />
-        <option value="$PROJECT_DIR$/app/todoMaker-svc/main.go" />
         <option value="$PROJECT_DIR$/database/createDbInfo.go" />
         <option value="$PROJECT_DIR$/modules/addTask.go" />
         <option value="$PROJECT_DIR$/toDoMakerHandlers/addTask.go" />
         <option value="$PROJECT_DIR$/models/getAllTasks.go" />
         <option value="$PROJECT_DIR$/models/addTask.go" />
+        <option value="$PROJECT_DIR$/app/todoMaker-svc/main.go" />
+        <option value="$PROJECT_DIR$/routers/route.go" />
       </list>
     </option>
   </component>
@@ -940,7 +928,7 @@
     <entry file="file://$PROJECT_DIR$/app/todoMaker-svc/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <element signature="e#14#140#0" expanded="true" />
           </folding>
@@ -949,9 +937,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routers/route.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12195122">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
+        <state vertical-scroll-proportion="0.19512194">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#17#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
