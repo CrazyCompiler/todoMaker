@@ -4,17 +4,18 @@ import (
 	"net/http"
 	"strings"
 	"database/sql"
-	"todoMaker/errorHandler"
+	"todoMaker/modules"
 )
 
-func AddTask(db *sql.DB) func(res http.ResponseWriter,req *http.Request){
+func AddTaskHandler(db *sql.DB) func(res http.ResponseWriter,req *http.Request){
 	return func(res http.ResponseWriter, req *http.Request) {
 		req.ParseForm();
 		task := strings.Join(req.Form["task"], "")
 		priority := strings.Join(req.Form["priority"], "")
-		var lastInsertId int
-		err := db.QueryRow("insert into tasks(task,priority)  VALUES($1,$2) returning taskId;", task, priority).Scan(&lastInsertId)
-		errorHandler.DatabaseErrorHandler(err)
+		err := modules.AddTask(db,task,priority)
+		if(err != nil){
+			res.WriteHeader(500)
+		}
 		res.WriteHeader(201)
 	}
 }

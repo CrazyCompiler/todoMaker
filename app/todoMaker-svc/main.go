@@ -7,14 +7,20 @@ import (
 	"todoMaker/database"
 	"todoMaker/routers"
 	"todoMaker/fileReaders"
+	"os"
 )
 
 func main()  {
-	dbConfigData := csvReaders.ReadCsv("fileReaders/dbConfig.csv")
+	configFilePath := "fileReaders/dbConfig.csv"
+	if(len(os.Args) > 1){
+		configFilePath = os.Args[1]
+	}
+	dbConfigData := csvReaders.ReadCsv(configFilePath)
 	dbinfo := database.CreateDbInfo(dbConfigData);
 	db := database.CreateConnection(dbinfo);
 	defer db.Close()
 	routers.HandleRequests(db)
+
 	err := http.ListenAndServe(":9090", nil)
 	if err != nil {
 		fmt.Println("their was error ",err)

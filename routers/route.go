@@ -13,7 +13,7 @@ func staticFiles(res http.ResponseWriter, req *http.Request) {
 
 
 func HandleRequests(db *sql.DB){
-	http.HandleFunc("/getAllTasks",toDoMakerHandlers.GetAllTasks(db))
-	http.HandleFunc("/addTask", toDoMakerHandlers.AddTask(db))
+	http.HandleFunc("/getAllTasks",toDoMakerHandlers.GetAllTasksHandler(db))
+	http.HandleFunc("/addTask", toDoMakerHandlers.AddTaskHandler(db))
 	http.HandleFunc("/", staticFiles)
 }
