@@ -61,13 +61,15 @@ func UploadCsv(db *sql.DB) http.HandlerFunc{
 			b1 := make([]byte, 32 << 20)
 			_,err = file.Read(b1)
 			seperatedData := fileReaders.ReadTaskCsv(string(b1))
+
 			for _, each := range seperatedData {
 				err := models.Add(db,each["task"],each["priority"])
 				if err != nil {
 					res.WriteHeader(http.StatusInternalServerError)
+					return
 				}
-				res.WriteHeader(http.StatusCreated)
 			}
+			res.WriteHeader(http.StatusCreated)
 		}
 	}
 }

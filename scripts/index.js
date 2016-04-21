@@ -38,7 +38,24 @@ var deleteTask = function(){
     })
 }
 
+var uploadCsv = function(){
+    var formData = new FormData($(this)[0]);
+     $.ajax({
+            url: "uploadCsv",
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {
+                alert("File has been uploaded")
+            },
+            contentType: false,
+            processData: false
+        });
+
+}
+
 $(document).ready(function(){
     $(".add").click(addTask);
+    $("form#csvUploader").submit(uploadCsv)
     getTaskLists();
 })
