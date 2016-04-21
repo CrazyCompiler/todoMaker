@@ -1,4 +1,4 @@
-package csvReaders
+package fileReaders
 
 import (
 	"github.com/stretchr/testify/assert"

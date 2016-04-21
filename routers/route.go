@@ -9,9 +9,10 @@ import (
 
 func HandleRequests(db *sql.DB) {
 	r := mux.NewRouter()
-	r.HandleFunc("/getAllTasks", toDoMakerHandlers.GetAllTasksHandler(db))
-	r.HandleFunc("/addTask", toDoMakerHandlers.AddTaskHandler(db))
+	r.HandleFunc("/uploadCsv",toDoMakerHandlers.UploadCsv(db)).Methods("POST")
+	r.HandleFunc("/deleteTask", toDoMakerHandlers.DeleteTask(db)).Methods("POST")
+	r.HandleFunc("/getAllTasks", toDoMakerHandlers.GetTasks(db)).Methods("GET")
+	r.HandleFunc("/addTask", toDoMakerHandlers.AddTask(db)).Methods("POST")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./")))
 	http.Handle("/", r)
-
 }

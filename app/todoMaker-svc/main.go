@@ -15,7 +15,7 @@ func main() {
 	if len(os.Args) > 1 {
 		configFilePath = os.Args[1]
 	}
-	dbConfigData := csvReaders.ReadCsv(configFilePath)
+	dbConfigData := fileReaders.ReadCsv(configFilePath)
 	dbinfo := database.CreateDbInfo(dbConfigData)
 	db := database.CreateConnection(dbinfo)
 	defer db.Close()

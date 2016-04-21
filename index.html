@@ -29,6 +29,15 @@
                 </select>
                 <button class="add" value="Add Task"> Add Task</button>
             </div>
+
+            <div class="uploadCsv">
+                <form enctype="multipart/form-data" action="uploadCsv" method="post">
+                    <input type="file" name="uploadFile" />
+                    <input type="hidden" name="token" value="{{.}}"/>
+                    <input type="submit" value="upload" />
+                </form>
+            </div>
+
         </div>
 </body>
 </html>

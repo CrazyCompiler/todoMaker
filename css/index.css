@@ -24,3 +24,14 @@
 .todoList table td{
     margin:10px;
 }
+
+.deleteTask{
+    cursor:pointer
+}
+
+.uploadCsv{
+    width:30%;
+    margin: 0 auto;
+    margin-top:2%;
+
+}
