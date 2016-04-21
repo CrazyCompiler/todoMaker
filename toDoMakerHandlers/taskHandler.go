@@ -6,7 +6,8 @@ import (
 	"todoMaker/models"
 	"net/http"
 	"strconv"
-	"fmt"
+	"todoMaker/errorHandler"
+	"todoMaker/fileReaders"
 )
 
 func AddTask(db *sql.DB) http.HandlerFunc {
@@ -45,16 +46,28 @@ func DeleteTask(db *sql.DB) http.HandlerFunc {
 
 func UploadCsv(db *sql.DB) http.HandlerFunc{
 	return func(res http.ResponseWriter,req *http.Request) {
-		req.ParseMultipartForm(32 << 20)
-		file,handler,err := req.FormFile("uploadFile")
+		err := req.ParseMultipartForm(32 << 20)
 		if err != nil {
-			fmt.Println(err)
-			return
+			errorHandler.FileUploadErrorHandler(err)
 		}
-		defer file.Close()
-		file,err := handler.Open()
-		fmt.Println(file,err)
-
-
+		m := req.MultipartForm
+		files := m.File["uploadFile"]
+		for i,_ := range files{
+			file,err := files[i].Open()
+			defer file.Close()
+			if err != nil {
+				errorHandler.FileUploadErrorHandler(err)
+			}
+			b1 := make([]byte, 32 << 20)
+			_,err = file.Read(b1)
+			seperatedData := fileReaders.ReadTaskCsv(string(b1))
+			for _, each := range seperatedData {
+				err := models.Add(db,each["task"],each["priority"])
+				if err != nil {
+					res.WriteHeader(http.StatusInternalServerError)
+				}
+				res.WriteHeader(http.StatusCreated)
+			}
+		}
 	}
 }

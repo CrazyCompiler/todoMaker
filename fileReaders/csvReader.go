@@ -13,13 +13,9 @@ func ReadCsv(fileName string) map[string]string {
 	if err != nil {
 		errorHandler.FileReadErrorHandler(err)
 	}
-
 	defer csvfile.Close()
-
 	reader := csv.NewReader(csvfile)
-
-	reader.FieldsPerRecord = -1 // see the Reader struct information below
-
+	reader.FieldsPerRecord = -1
 	rawCSVdata, err := reader.ReadAll()
 
 	if err != nil {
