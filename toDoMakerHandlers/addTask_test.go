@@ -9,6 +9,6 @@ type mockObject struct {
 	mock.Mock
 }
 
-func (m *mockObject ) TestAddTask(t *testing.T) {
+func (m *mockObject) TestAddTask(t *testing.T) {
 
 }

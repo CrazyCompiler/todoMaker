@@ -1,8 +1,8 @@
 package csvReaders
 
 import (
-	"os"
 	"encoding/csv"
+	"os"
 	"todoMaker/errorHandler"
 )
 

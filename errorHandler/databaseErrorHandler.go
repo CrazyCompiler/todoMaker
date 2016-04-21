@@ -2,9 +2,9 @@ package errorHandler
 
 import "io/ioutil"
 
-func DatabaseErrorHandler(err error ){
+func DatabaseErrorHandler(err error) {
 	if err != nil {
-	errorBody := []byte(err.Error())
-	ioutil.WriteFile("dbError.txt",errorBody,0600)
+		errorBody := []byte(err.Error())
+		ioutil.WriteFile("dbError.txt", errorBody, 0600)
 	}
 }

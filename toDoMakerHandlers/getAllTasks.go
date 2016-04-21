@@ -1,14 +1,14 @@
 package toDoMakerHandlers
 
 import (
-	"net/http"
 	"database/sql"
-	"todoMaker/modules"
+	"net/http"
+	"todoMaker/models"
 )
 
-func GetAllTasksHandler(db *sql.DB) func(res http.ResponseWriter,req *http.Request){
-	return func(res http.ResponseWriter,req *http.Request) {
-		data := modules.GetAllTasks(db)
+func GetAllTasksHandler(db *sql.DB) func(res http.ResponseWriter, req *http.Request) {
+	return func(res http.ResponseWriter, req *http.Request) {
+		data := models.GetAllTasks(db)
 		res.Write(data)
 	}
 }
