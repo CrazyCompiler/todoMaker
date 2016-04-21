@@ -15,8 +15,7 @@ func AddTask(db *sql.DB) func(res http.ResponseWriter,req *http.Request){
 		var lastInsertId int
 		err := db.QueryRow("insert into tasks(task,priority)  VALUES($1,$2) returning taskId;", task, priority).Scan(&lastInsertId)
 		errorHandler.DatabaseErrorHandler(err)
-
-		GetAllTasks(db)(res,req);
+		res.WriteHeader(201)
 	}
 }
 
