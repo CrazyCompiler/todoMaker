@@ -7,5 +7,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="GOPATH &lt;chatApplication&gt;" level="project" />
     <orderEntry type="library" name="GOPATH &lt;todoMaker&gt;" level="project" />
+    <orderEntry type="library" name="GOPATH &lt;taskManager&gt;" level="project" />
   </component>
 </module>

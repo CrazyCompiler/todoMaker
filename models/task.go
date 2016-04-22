@@ -2,8 +2,8 @@ package models
 
 import (
 	"database/sql"
-	"todoMaker/errorHandler"
-	"todoMaker/converters"
+	"taskManager/errorHandler"
+	"taskManager/converters"
 	"encoding/json"
 )
 

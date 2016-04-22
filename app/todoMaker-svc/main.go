@@ -5,9 +5,9 @@ import (
 	_ "github.com/lib/pq"
 	"net/http"
 	"os"
-	"todoMaker/database"
-	"todoMaker/fileReaders"
-	"todoMaker/routers"
+	"taskManager/database"
+	"taskManager/fileReaders"
+	"taskManager/routers"
 )
 
 func main() {

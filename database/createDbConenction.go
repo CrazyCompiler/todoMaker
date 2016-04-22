@@ -2,7 +2,7 @@ package database
 
 import (
 	"database/sql"
-	"todoMaker/errorHandler"
+	"taskManager/errorHandler"
 )
 
 func CreateConnection(dbinfo string) *sql.DB {

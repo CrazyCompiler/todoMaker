@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;taskManager&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../httpServer" />
+      <root url="file://$PROJECT_DIR$/../newproject" />
+      <root url="file://$PROJECT_DIR$/../todoMaker" />
+      <root url="file://$PROJECT_DIR$/../hello" />
+      <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../interfaces" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

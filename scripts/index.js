@@ -30,12 +30,16 @@ var getTaskLists = function(player){
 };
 
 var deleteTask = function(){
-    var data = "taskId="+this.id;
-    $.post("/deleteTask",data,function(data,status){
-            if(status == "success"){
-                getTaskLists();
-            }
-    })
+    var dataToBeSend = {taskId:this.id};
+      $.ajax({
+        url: "/deleteTask/"+this.id,
+        type: 'DELETE',
+        data: dataToBeSend,
+        traditional: true,
+        success: getTaskLists,
+    });
+    getTaskLists();
+
 }
 
 var uploadCsv = function(){

@@ -3,11 +3,11 @@ package toDoMakerHandlers
 import (
 	"database/sql"
 	"strings"
-	"todoMaker/models"
+	"taskManager/models"
 	"net/http"
 	"strconv"
-	"todoMaker/errorHandler"
-	"todoMaker/fileReaders"
+	"taskManager/errorHandler"
+	"taskManager/fileReaders"
 )
 
 func AddTask(db *sql.DB) http.HandlerFunc {
@@ -35,7 +35,7 @@ func GetTasks(db *sql.DB) http.HandlerFunc {
 func DeleteTask(db *sql.DB) http.HandlerFunc {
 	return func(res http.ResponseWriter,req *http.Request) {
 		req.ParseForm()
-		taskId := strings.Join(req.Form["taskId"], "")
+		taskId := strings.Split(req.RequestURI,"/")[2]
 		task,err := strconv.Atoi(taskId)
 		err = models.Delete(db,task)
 		if err != nil {
@@ -55,6 +55,7 @@ func UploadCsv(db *sql.DB) http.HandlerFunc{
 		m := req.MultipartForm
 
 		files := m.File["uploadFile"]
+
 		for i,_ := range files{
 			file,err := files[i].Open()
 			defer file.Close()
@@ -67,7 +68,6 @@ func UploadCsv(db *sql.DB) http.HandlerFunc{
 				errorHandler.ErrorHandler(err)
 			}
 			seperatedData,err := fileReaders.ReadTaskCsv(string(b1))
-
 			if err != nil {
 				errorHandler.ErrorHandler(err)
 				res.WriteHeader(http.StatusBadRequest)

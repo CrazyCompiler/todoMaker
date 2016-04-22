@@ -3,11 +3,13 @@ package fileReaders
 import (
 	"encoding/csv"
 	"strings"
-	"todoMaker/errorHandler"
+	"taskManager/errorHandler"
 )
 
+const totalNoOfRows = 2
+
 func ReadTaskCsv(fileData string) ([]map[string]string,error) {
-	 dataArray := []map[string]string{}
+	dataArray := []map[string]string{}
 	reader := csv.NewReader(strings.NewReader(fileData))
 
 	reader.FieldsPerRecord = -1
@@ -19,9 +21,11 @@ func ReadTaskCsv(fileData string) ([]map[string]string,error) {
 
 	for _, each := range rawCSVdata {
 		entry := make(map[string]string)
-		entry["task"] = each[0]
-		entry["priority"] = each[1]
-		dataArray = append(dataArray, entry)
+		if(len(each) == totalNoOfRows) {
+			entry["task"] = each[0]
+			entry["priority"] = each[1]
+			dataArray = append(dataArray, entry)
+		}
 	}
 	return dataArray,err
 }

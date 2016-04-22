@@ -3,7 +3,7 @@ package fileReaders
 import (
 	"encoding/csv"
 	"os"
-	"todoMaker/errorHandler"
+	"taskManager/errorHandler"
 )
 
 func ReadCsv(fileName string) map[string]string {
