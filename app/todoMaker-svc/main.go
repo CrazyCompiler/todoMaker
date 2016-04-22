@@ -11,12 +11,13 @@ import (
 )
 
 func main() {
-	configFilePath := "fileReaders/dbConfig.csv"
+	configFilePath := "fileReaders/demoJson"
 	if len(os.Args) > 1 {
 		configFilePath = os.Args[1]
 	}
-	dbConfigData := fileReaders.ReadCsv(configFilePath)
-	dbinfo := database.CreateDbInfo(dbConfigData)
+	dbConfigDataJson := fileReaders.ReadJsonFile(configFilePath)
+	dbinfo := database.CreateDbInfo(dbConfigDataJson)
+
 	db := database.CreateConnection(dbinfo)
 	defer db.Close()
 	routers.HandleRequests(db)

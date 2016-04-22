@@ -6,10 +6,16 @@ import (
 	"taskManager/errorHandler"
 )
 
+type TableContent struct {
+	TASK     string
+	PRIORITY string
+}
+
+
 const totalNoOfRows = 2
 
-func ReadTaskCsv(fileData string) ([]map[string]string,error) {
-	dataArray := []map[string]string{}
+func ReadTaskCsv(fileData string) ([]TableContent,error) {
+	dataArray := []TableContent{}
 	reader := csv.NewReader(strings.NewReader(fileData))
 
 	reader.FieldsPerRecord = -1
@@ -20,13 +26,14 @@ func ReadTaskCsv(fileData string) ([]map[string]string,error) {
 	}
 
 	for _, each := range rawCSVdata {
-		entry := make(map[string]string)
+		entry := TableContent{}
 		if(len(each) == totalNoOfRows) {
-			entry["task"] = each[0]
-			entry["priority"] = each[1]
+			entry.TASK = each[0]
+			entry.PRIORITY = each[1]
 			dataArray = append(dataArray, entry)
 		}
 	}
 	return dataArray,err
+
 }
 

@@ -67,14 +67,14 @@ func UploadCsv(db *sql.DB) http.HandlerFunc{
 			if err != nil {
 				errorHandler.ErrorHandler(err)
 			}
-			seperatedData,err := fileReaders.ReadTaskCsv(string(b1))
+			separatedData,err := fileReaders.ReadTaskCsv(string(b1))
 			if err != nil {
 				errorHandler.ErrorHandler(err)
 				res.WriteHeader(http.StatusBadRequest)
 			}
 
-			for _, each := range seperatedData {
-				err := models.Add(db,each["task"],each["priority"])
+			for _, each := range separatedData {
+				err := models.Add(db,each.TASK ,each.PRIORITY)
 				if err != nil {
 					errorHandler.ErrorHandler(err)
 					res.WriteHeader(http.StatusInternalServerError)
