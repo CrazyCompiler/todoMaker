@@ -1,10 +1,11 @@
 package models
 
 import (
-	"database/sql"
 	"taskManager/errorHandler"
 	"taskManager/converters"
 	"encoding/json"
+	"database/sql"
+	"taskManager/config"
 )
 
 const (
@@ -13,24 +14,24 @@ const (
 	dbDeleteQuery string = "delete from tasks where taskId=$1"
 )
 
-func Get(db *sql.DB) []byte {
-	rows, err := db.Query(dbSelectQuery)
+func Get(configObject config.ContextObject) []byte {
+	rows, err := configObject.Db.Query(dbSelectQuery)
 	if err != nil {
-		errorHandler.ErrorHandler(err)
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 	}
 	dbData := converters.ConvertRowsToStructObjects(rows)
 	data, err := json.Marshal(dbData)
 	if err != nil {
-		errorHandler.ErrorHandler(err)
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 	}
 	return data
 }
 
-func Add(db *sql.DB, task string, priority string) error {
+func Add(configObject config.ContextObject, task string, priority string) error {
 	var lastInsertId int
-	err := db.QueryRow(dbInsertQuery, task, priority).Scan(&lastInsertId)
+	err := configObject.Db.QueryRow(dbInsertQuery, task, priority).Scan(&lastInsertId)
 	if err != nil {
-		errorHandler.ErrorHandler(err)
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 		return err
 	}
 	return nil

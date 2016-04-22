@@ -2,7 +2,6 @@ package converters
 
 import (
 	"database/sql"
-	"taskManager/errorHandler"
 )
 
 type TableContent struct {
@@ -11,16 +10,12 @@ type TableContent struct {
 	PRIORITY string
 }
 
-func ConvertRowsToStructObjects(rows *sql.Rows) []TableContent {
-
+func ConvertRowsToStructObjects(rows *sql.Rows) ([]TableContent) {
 	dbData := []TableContent{}
 	if(rows != nil) {
 		for rows.Next() {
 			var r TableContent
-			err := rows.Scan(&r.TASKID, &r.TASK, &r.PRIORITY)
-			if err != nil {
-				errorHandler.ErrorHandler(err)
-			}
+			rows.Scan(&r.TASKID, &r.TASK, &r.PRIORITY)
 			dbData = append(dbData, r)
 		}
 	}

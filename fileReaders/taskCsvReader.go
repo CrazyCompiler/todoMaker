@@ -3,7 +3,6 @@ package fileReaders
 import (
 	"encoding/csv"
 	"strings"
-	"taskManager/errorHandler"
 )
 
 type TableContent struct {
@@ -20,10 +19,6 @@ func ReadTaskCsv(fileData string) ([]TableContent,error) {
 
 	reader.FieldsPerRecord = -1
 	rawCSVdata, err := reader.ReadAll()
-
-	if err != nil {
-		errorHandler.ErrorHandler(err)
-	}
 
 	for _, each := range rawCSVdata {
 		entry := TableContent{}

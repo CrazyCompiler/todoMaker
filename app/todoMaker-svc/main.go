@@ -1,28 +1,48 @@
 package main
 
 import (
-	"fmt"
-	_ "github.com/lib/pq"
-	"net/http"
-	"os"
-	"taskManager/database"
-	"taskManager/fileReaders"
 	"taskManager/routers"
+	"os"
+	"taskManager/fileReaders"
+	"taskManager/database"
+	"database/sql"
+	"taskManager/errorHandler"
+	"fmt"
+	"net/http"
+	"taskManager/config"
+	_ "github.com/lib/pq"
 )
 
 func main() {
-	configFilePath := "fileReaders/demoJson"
-	if len(os.Args) > 1 {
-		configFilePath = os.Args[1]
+	configObject := config.ContextObject{}
+	errorLogFilePath := "errorLog"
+	errorFile, err := os.OpenFile(errorLogFilePath, os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		panic(err)
 	}
-	dbConfigDataJson := fileReaders.ReadJsonFile(configFilePath)
+	defer errorFile.Close()
+
+	configObject.ErrorLogFile = errorFile
+
+	dbConfigFilePath := "dbConfigFile"
+	if len(os.Args) > 1 {
+		dbConfigFilePath = os.Args[1]
+	}
+	dbConfigDataJson := fileReaders.ReadJsonFile(dbConfigFilePath)
 	dbinfo := database.CreateDbInfo(dbConfigDataJson)
 
-	db := database.CreateConnection(dbinfo)
-	defer db.Close()
-	routers.HandleRequests(db)
+	configObject.Db, err = sql.Open("postgres", dbinfo)
 
-	err := http.ListenAndServe(":9090", nil)
+	configObject.Db.Ping()
+
+	if err != nil {
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+	}
+
+	defer configObject.Db.Close()
+	routers.HandleRequests(configObject)
+
+	err = http.ListenAndServe(":9090", nil)
 	if err != nil {
 		fmt.Println("their was error ", err)
 	}
