@@ -1,4 +1,4 @@
-package toDoMakerHandlers
+package handlers
 
 import (
 	"database/sql"

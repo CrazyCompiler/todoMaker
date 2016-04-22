@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6e707c-caee-44ad-8685-f52ba14cea39" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fileReaders/DbConfig.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fileReaders/demoJson" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fileReaders/csvReader.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fileReaders/csvReader_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fileReaders/dbConfig.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fileReaders/dbConfigForTest.csv" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/task_test.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/todoMaker-svc/main.go" afterPath="$PROJECT_DIR$/app/todoMaker-svc/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/createDbInfo.go" afterPath="$PROJECT_DIR$/database/createDbInfo.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/converters/convertTasksRowToStruct.go" afterPath="$PROJECT_DIR$/converters/convertTasksRowToStruct.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorHandler/errorHander.go" afterPath="$PROJECT_DIR$/errorHandler/errorHander.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorLog" afterPath="$PROJECT_DIR$/errorLog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fileReaders/taskCsvReader.go" afterPath="$PROJECT_DIR$/fileReaders/taskCsvReader.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/taskHandler.go" afterPath="$PROJECT_DIR$/handlers/taskHandler.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routers/route.go" afterPath="$PROJECT_DIR$/routers/route.go" />
     </list>
     <ignored path="chatApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,46 +33,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DbConfig.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fileReaders/DbConfig.go">
+      <file leaf-file-name="task_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/task_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/todoMaker-svc/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41463414">
-              <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.5206972">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
               <folding>
-                <element signature="e#14#146#0" expanded="true" />
+                <element signature="e#16#117#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fileReaders/demo.csv">
+      <file leaf-file-name="task.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/task.go">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#16#113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="errorHander.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/errorHandler/errorHander.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taskCsvReader.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fileReaders/taskCsvReader.go">
+      <file leaf-file-name="convertTasksRowToStruct.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/converters/convertTasksRowToStruct.go">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="e#21#86#0" expanded="true" />
-              </folding>
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,10 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.idea/loginPage.html" />
-        <option value="$PROJECT_DIR$/loginPage.html" />
-        <option value="$PROJECT_DIR$/css/login.css" />
-        <option value="$PROJECT_DIR$/scripts/login.js" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/addToList.html" />
         <option value="$PROJECT_DIR$/dataBaseConnection.go" />
@@ -137,17 +128,13 @@
         <option value="$PROJECT_DIR$/errorHandler/fileReadErrorHandler.go" />
         <option value="$PROJECT_DIR$/database/createConenction.go" />
         <option value="$PROJECT_DIR$/fileReaders/dbConfigForTest.csv" />
-        <option value="$PROJECT_DIR$/errorHandler/errorHander.go" />
         <option value="$PROJECT_DIR$/errorLog" />
         <option value="$PROJECT_DIR$/toDoMakerHandlers/taskHandler.go" />
         <option value="$PROJECT_DIR$/fileReaders/demo.csv" />
         <option value="$PROJECT_DIR$/converters/rowsToStructObject.go" />
         <option value="$PROJECT_DIR$/database/createDbConenction.go" />
         <option value="$PROJECT_DIR$/fileReaders/csvReader.go" />
-        <option value="$PROJECT_DIR$/models/task.go" />
-        <option value="$PROJECT_DIR$/routers/route.go" />
         <option value="$PROJECT_DIR$/scripts/index.js" />
-        <option value="$PROJECT_DIR$/handlers/taskHandler.go" />
         <option value="$PROJECT_DIR$/fileReaders/taskCsvReader.go" />
         <option value="$PROJECT_DIR$/fileReaders/ReadJsonFile_test.go" />
         <option value="$PROJECT_DIR$/fileReaders/demoJson" />
@@ -155,6 +142,15 @@
         <option value="$PROJECT_DIR$/database/createDbInfo.go" />
         <option value="$PROJECT_DIR$/fileReaders/csvReader_test.go" />
         <option value="$PROJECT_DIR$/app/todoMaker-svc/main.go" />
+        <option value="$PROJECT_DIR$/models/tast_test.go" />
+        <option value="$PROJECT_DIR$/handlers/taskHandler.go" />
+        <option value="$PROJECT_DIR$/routers/route.go" />
+        <option value="$PROJECT_DIR$/errorHandler/errorHander.go" />
+        <option value="$PROJECT_DIR$/converters/convertTasksRowToStruct.go" />
+        <option value="$PROJECT_DIR$/models/task.go" />
+        <option value="$PROJECT_DIR$/routers/delete_test.go" />
+        <option value="$PROJECT_DIR$/routers/delete.go" />
+        <option value="$PROJECT_DIR$/models/task_test.go" />
       </list>
     </option>
   </component>
@@ -226,39 +222,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fileReaders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chatApplication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="converters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chatApplication" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="taskManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoMaker-svc" />
+              <option name="myItemId" value="routers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,34 +249,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestReadJsonFile in ReadJsonFile_test.go">
-    <configuration default="false" name="TestReadCsv in csvReader_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="todoMaker" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="todoMaker/fileReaders" />
-      <pattern value="^TestReadCsv$" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestRead in jsonFileReader_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="todoMaker" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="todoMaker/fileReaders" />
-      <pattern value="^TestRead$" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestFileUploadErrorHandler in fileUploadErrorHandler_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="todoMaker" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="todoMaker/errorHandler" />
-      <pattern value="^TestFileUploadErrorHandler$" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TestGet in task_test.go">
     <configuration default="false" name="fileUploadErrorHandler_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="todoMaker" />
       <working_directory value="$PROJECT_DIR$" />
@@ -328,6 +265,33 @@
       <kind value="PACKAGE" />
       <package value="taskManager/fileReaders" />
       <pattern value="^TestReadJsonFile$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestGet in task_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="taskManager" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="taskManager/models" />
+      <pattern value="^TestGet$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestAdd in task_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="taskManager" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="taskManager/models" />
+      <pattern value="^TestAdd$" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestShouldUpdateStats in delete_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="taskManager" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="taskManager/routers" />
+      <pattern value="^TestShouldUpdateStats$" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -607,19 +571,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestReadCsv in csvReader_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestRead in jsonFileReader_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.TestFileUploadErrorHandler in fileUploadErrorHandler_test.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.fileUploadErrorHandler_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestReadJsonFile in ReadJsonFile_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Test.fileUploadErrorHandler_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestReadJsonFile in ReadJsonFile_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestGet in task_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestAdd in task_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestShouldUpdateStats in delete_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestReadJsonFile in ReadJsonFile_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.fileUploadErrorHandler_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.TestFileUploadErrorHandler in fileUploadErrorHandler_test.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestRead in jsonFileReader_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestReadCsv in csvReader_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestGet in task_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestShouldUpdateStats in delete_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestAdd in task_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestReadJsonFile in ReadJsonFile_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.fileUploadErrorHandler_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -637,39 +601,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 06m 13s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 33m 07s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 08m 35s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 33m 27s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 09m 47s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 33m 41s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 10m 08s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 36m 16s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 11m 08s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 41m 48s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 11m 19s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 42m 06s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 12m 48s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 42m 21s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 13m 16s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 42m 25s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 13m 42s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 42m 40s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestReadJsonFile_in_ReadJsonFile_test_go - 2016.04.22 at 12h 13m 59s.xml">
-      <configuration name="TestReadJsonFile in ReadJsonFile_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGet_in_task_test_go - 2016.04.22 at 16h 43m 23s.xml">
+      <configuration name="TestGet in task_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="940" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="940" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -678,7 +642,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4634434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42570755" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -694,6 +658,29 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.370283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278302" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -748,7 +735,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
           <folding>
-            <element signature="e#17#105#0" expanded="false" />
+            <element signature="e#17#105#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/database/sql/sql.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1026" column="14" selection-start-line="1026" selection-start-column="14" selection-end-line="1026" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -923,38 +902,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/errorHandler/errorHander.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#22#53#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routers/route.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#17#105#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/net/http/request.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="214" column="31" selection-start-line="214" selection-start-column="31" selection-end-line="214" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/task.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048661802">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -967,28 +918,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/converters/convertTasksRowToStruct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38929442">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#20#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fileReaders/demoJson">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12642226">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/taskHandler.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325527">
-          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -998,7 +931,7 @@
         <state vertical-scroll-proportion="0.6097561">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#18#62#0" expanded="true" />
+            <element signature="e#18#62#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1013,7 +946,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fileReaders/demo.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.14634146">
           <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
           <folding />
         </state>
@@ -1021,10 +954,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fileReaders/taskCsvReader.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.3902439">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
-            <element signature="e#21#86#0" expanded="true" />
+            <element signature="e#21#86#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1034,7 +967,93 @@
         <state vertical-scroll-proportion="0.41463414">
           <caret line="17" column="68" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
           <folding>
-            <element signature="e#14#146#0" expanded="true" />
+            <element signature="e#14#146#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/route.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34146342">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#17#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/taskHandler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14634146">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../github.com/DATA-DOG/go-sqlmock/driver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/database/sql/driver/driver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/database/sql/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4192872">
+          <caret line="942" column="71" selection-start-line="942" selection-start-column="14" selection-end-line="942" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gopkg.in/DATA-DOG/go-sqlmock.v1/sqlmock.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.888889">
+          <caret line="363" column="28" selection-start-line="363" selection-start-column="24" selection-end-line="363" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/converters/convertTasksRowToStruct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errorHandler/errorHander.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/task.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#16#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/task_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5206972">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <element signature="e#16#117#0" expanded="true" />
           </folding>
         </state>
       </provider>

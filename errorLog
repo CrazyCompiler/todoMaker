@@ -12,3 +12,54 @@ Mon Jan _2 15:04:05 2006 : pq: invalid byte sequence for encoding "UTF8": 0x00
 Mon Jan _2 15:04:05 2006 : pq: invalid byte sequence for encoding "UTF8": 0x00
 Mon Jan _2 15:04:05 2006 : line 2, column 2: bare " in non-quoted-field
 Mon Jan _2 15:04:05 2006 : line 2, column 2: bare " in non-quoted-field
+Mon Jan _2 15:04:05 2006 : all expectations were already fulfilled, call to query 'select taskId,task,priority from tasks;' with args [] was not expected
+Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [Select hello]
+Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [Select hello]
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [sleep at night High], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [sleep at night High], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'select taskId,task,priority from tasks;'
+  - is with arguments:
+    0 - 1
+    1 - 1
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 2
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'select taskId,task,priority from tasks;'
+  - is without arguments
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 2
+Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks;' with args [], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'select '
+  - is without arguments
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 2
+Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [seletc]

@@ -9,10 +9,10 @@ import (
 
 func HandleRequests(db *sql.DB) {
 	r := mux.NewRouter()
-	r.HandleFunc("/uploadCsv",toDoMakerHandlers.UploadCsv(db)).Methods("POST")
-	r.HandleFunc("/deleteTask/{id:[0-9]+}", toDoMakerHandlers.DeleteTask(db)).Methods("DELETE")
-	r.HandleFunc("/getAllTasks", toDoMakerHandlers.GetTasks(db)).Methods("GET")
-	r.HandleFunc("/addTask", toDoMakerHandlers.AddTask(db)).Methods("POST")
+	r.HandleFunc("/uploadCsv",handlers.UploadCsv(db)).Methods("POST")
+	r.HandleFunc("/deleteTask/{id:[0-9]+}", handlers.DeleteTask(db)).Methods("DELETE")
+	r.HandleFunc("/getAllTasks", handlers.GetTasks(db)).Methods("GET")
+	r.HandleFunc("/addTask", handlers.AddTask(db)).Methods("POST")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./")))
 	http.Handle("/", r)
 }
