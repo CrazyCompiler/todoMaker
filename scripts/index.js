@@ -1,3 +1,5 @@
+var $scope = {};
+
 var addTask = function(){
     var task = $('#task').val();
     var priority = $('#priority').val();
@@ -5,25 +7,45 @@ var addTask = function(){
 
     $.post("/addTask",data,function(data,status){
         if(status == "success"){
-            getTaskLists();
+             $scope.gridOptions.api.refreshView();
         }
     })
 }
 
+
+$scope.gridOptions = {
+    debug: true,
+    rowData: null,
+    groupHeaders: true,
+    enableSorting: true,
+    enableFilter: true,
+    enableColResize: true,
+    rowHeight:30
+};
+
+
+
 var getTaskLists = function(player){
 	$.get("/getAllTasks","getAllTasks",function(data,status){
 		if(status == "success"){
-		    var tasksTable = "<table><tr><td>Task id</td><td> Task Description</td><td> Priority </td></tr>";
-		    data = JSON.parse(data);
-		    h = data
-		    for(var key in data){
-		         tasksTable += "<tr><td>"
-		         + data[key].TASKID + "</td><td>"
-		         + data[key].TASK + "</td><td>"
-		         + data[key].PRIORITY + "</td>"
-		         + " <td><div class='deleteTask' id="+data[key].TASKID+ "> ✗ </div></td> </tr>"
-		    }
-			$(".todoList").html(tasksTable);
+
+            var columnDefs = [
+                    {headerName: "Task_Id", field: "TASKID" , width: 150},
+                    {headerName: "Task Description", field: "TASK" , width: 150},
+                    {headerName: "Priority" , field: "PRIORITY" , width: 150},
+                    {headerName: "" , field: "delete", width : 150 }
+                ];
+
+            data = JSON.parse(data);
+            data.forEach(function(each){
+                each.delete = " <td><div class='deleteTask' id="+each.TASKID+ "> ✗ </div>"
+            })
+
+            $scope.gridOptions.columnDefs =  columnDefs;
+
+            var eGridDiv = document.querySelector('.todoList');
+            new agGrid.Grid(eGridDiv, $scope.gridOptions);
+            $scope.gridOptions.api.setRowData(data);
 		}
 		$(".deleteTask").click(deleteTask);
 	});
@@ -36,9 +58,9 @@ var deleteTask = function(){
         type: 'DELETE',
         data: dataToBeSend,
         traditional: true,
-        success: getTaskLists,
+        success:$scope.gridOptions.api.refreshView()
     });
-    getTaskLists();
+      $scope.gridOptions.api.refreshView();
 
 }
 
