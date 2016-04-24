@@ -63,3 +63,81 @@ Mon Jan _2 15:04:05 2006 : call to query 'select taskId,task,priority from tasks
       LastInsertId: 1
       RowsAffected: 2
 Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [seletc]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority)  VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority)  VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority)]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority) VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority) VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority) VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : all expectations were already fulfilled, call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [buy bottles High] was not expected
+Mon Jan _2 15:04:05 2006 : all expectations were already fulfilled, call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [buy bottles High] was not expected
+Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [selecct]
+Mon Jan _2 15:04:05 2006 : query 'select taskId,task,priority from tasks;', does not match regex [insert into tasks(task,priority)  VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex [insert into tasks(task,priority)  VALUES($1,$2) returning taskId;]
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [Buy Bottle High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'insert into tasks(task,priority)  VALUES($1,$2) returning taskId;'
+  - is without arguments
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [Buy Bottle High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'insert into tasks(task,priority)'
+  - is without arguments
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [Buy Bottle High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'insert into tasks(task,priority)'
+  - is with arguments:
+    0 - Buy Bottle
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [Buy Bottle High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'insert into tasks(task,priority)  VALUES($1,$2) returning taskId;'
+  - is with arguments:
+    0 - Buy Bottle
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [Buy Bottle High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'insert into tasks(task,priority)  VALUES($1,$2)'
+  - is with arguments:
+    0 - Buy Bottle
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedPrepare => expecting Prepare statement which:
+  - matches sql: 'INSERT INTO project'
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedPrepare => expecting Prepare statement which:
+  - matches sql: 'INSERT INTO tasks'
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'INSERT INTO agents'
+  - is with arguments:
+    0 - dring water
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'INSERT INTO tasks'
+  - is with arguments:
+    0 - dring water
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedExec => expecting Exec which:
+  - matches sql: 'INSERT INTO tasks'
+  - is with arguments:
+    0 - dring water
+    1 - High
+  - should return Result having:
+      LastInsertId: 1
+      RowsAffected: 1
+Mon Jan _2 15:04:05 2006 : call to query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : call to exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;' with args [dring water High], was not expected, next expectation is: ExpectedBegin => expecting database transaction Begin
+Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'INSERT INTO tasks'
+Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'INSERT INTO tasks'
+Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'insert into tasks(task,priority)  VALUES($1,$2) returning taskId;'
+Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'insert into taskss'

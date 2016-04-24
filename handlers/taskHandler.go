@@ -37,7 +37,7 @@ func DeleteTask(configObject config.ContextObject) http.HandlerFunc {
 		req.ParseForm()
 		taskId := strings.Split(req.RequestURI,"/")[2]
 		task,err := strconv.Atoi(taskId)
-		err = models.Delete(configObject.Db,task)
+		err = models.Delete(configObject,task)
 		if err != nil {
 			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 			res.WriteHeader(http.StatusInternalServerError)
