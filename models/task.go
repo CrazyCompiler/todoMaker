@@ -4,7 +4,6 @@ import (
 	"taskManager/errorHandler"
 	"taskManager/converters"
 	"encoding/json"
-	"database/sql"
 	"taskManager/config"
 )
 
@@ -28,8 +27,7 @@ func Get(configObject config.ContextObject) []byte {
 }
 
 func Add(configObject config.ContextObject, task string, priority string) error {
-	var lastInsertId int
-	err := configObject.Db.QueryRow(dbInsertQuery, task, priority).Scan(&lastInsertId)
+	_,err := configObject.Db.Exec(dbInsertQuery, task, priority)
 	if err != nil {
 		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 		return err
@@ -37,7 +35,10 @@ func Add(configObject config.ContextObject, task string, priority string) error 
 	return nil
 }
 
-func Delete(db *sql.DB, taskId int) error {
-	db.QueryRow(dbDeleteQuery,taskId)
+func Delete(configObject config.ContextObject, taskId int) error {
+	_,err := configObject.Db.Exec(dbDeleteQuery,taskId)
+	if err != nil {
+		return err
+	}
 	return nil
 }
