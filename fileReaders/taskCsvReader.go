@@ -25,13 +25,9 @@ func ReadTaskCsv(fileData string) ([]TableContent,error) {
 		return dataArray,err
 	}
 
-	for _, each := range rawCSVdata {
-		entry := TableContent{}
-		if(len(each) == 2) {
-			entry.TASK = each[0]
-			entry.PRIORITY = each[1]
-			dataArray = append(dataArray, entry)
-		}
+	for i:=0;i<len(rawCSVdata)-1;i++  {
+		eachEntry := rawCSVdata[i]
+		dataArray = append(dataArray, TableContent{eachEntry[0],eachEntry[1]})
 	}
 	return dataArray,err
 
