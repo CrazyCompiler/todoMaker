@@ -3,6 +3,8 @@ package fileReaders
 import (
 	"encoding/csv"
 	"strings"
+	"learnings/validate"
+	"errors"
 )
 
 type TableContent struct {
@@ -24,6 +26,9 @@ func ReadTaskCsv(fileData string) ([]TableContent,error) {
 		entry := TableContent{}
 		if(len(each) == totalNoOfRows) {
 			entry.TASK = each[0]
+			if validate.IsValidPriority(each[1])==false {
+				return dataArray,errors.New("Invalid priority")
+			}
 			entry.PRIORITY = each[1]
 			dataArray = append(dataArray, entry)
 		}
