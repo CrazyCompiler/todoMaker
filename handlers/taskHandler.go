@@ -8,6 +8,7 @@ import (
 	"taskManager/fileReaders"
 	"net/http"
 	"taskManager/config"
+	"fmt"
 )
 
 func AddTask(configObject config.ContextObject) http.HandlerFunc {
@@ -86,6 +87,7 @@ func UploadCsv(configObject config.ContextObject) http.HandlerFunc{
 			separatedData,err := fileReaders.ReadTaskCsv(string(b1))
 			if err != nil {
 				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+				fmt.Fprint(res,err.Error())
 				res.WriteHeader(http.StatusBadRequest)
 			}
 

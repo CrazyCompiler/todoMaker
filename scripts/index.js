@@ -131,7 +131,10 @@ var uploadCsv = function(){
             data: formData,
             async: false,
             success: function (data) {
-                alert("File has been uploaded")
+                if(data){
+                    alert(data)
+                }
+                    alert("File has been uploaded")
             },
             contentType: false,
             processData: false
