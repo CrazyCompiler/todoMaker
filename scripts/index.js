@@ -20,7 +20,7 @@ $scope.gridOptions = {
     enableSorting: true,
     enableFilter: true,
     enableColResize: true,
-    rowHeight:30
+    rowHeight:40
 };
 
 
@@ -30,10 +30,10 @@ var getTaskLists = function(player){
 		if(status == "success"){
 
             var columnDefs = [
-                    {headerName: "Task_Id", field: "TASKID" , width: 150},
-                    {headerName: "Task Description", field: "TASK" , width: 150},
-                    {headerName: "Priority" , field: "PRIORITY" , width: 150},
-                    {headerName: "" , field: "delete", width : 150 }
+                    {headerName: "Task_Id", field: "TASKID"},
+                    {headerName: "Task Description", field: "TASK"},
+                    {headerName: "Priority" , field: "PRIORITY"},
+                    {headerName: "" , field: "delete"}
                 ];
 
             data = JSON.parse(data);

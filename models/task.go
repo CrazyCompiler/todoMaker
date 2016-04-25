@@ -1,43 +1,18 @@
 package models
 
 import (
-	"taskManager/errorHandler"
-	"taskManager/converters"
-	"encoding/json"
 	"taskManager/config"
+	"taskManager/errorHandler"
 )
 
-const (
-	dbSelectQuery string = "select taskId,task,priority from tasks;"
-	dbInsertQuery string = "insert into tasks(task,priority)  VALUES($1,$2) returning taskId;"
-	dbDeleteQuery string = "delete from tasks where taskId=$1"
-)
-
-func Get(configObject config.ContextObject) []byte {
-	rows, err := configObject.Db.Query(dbSelectQuery)
-	if err != nil {
-		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-	}
-	dbData := converters.ConvertRowsToStructObjects(rows)
-	data, err := json.Marshal(dbData)
-	if err != nil {
-		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-	}
-	return data
+type Task struct {
+	taskDescription,priority string
 }
 
-func Add(configObject config.ContextObject, task string, priority string) error {
-	_,err := configObject.Db.Exec(dbInsertQuery, task, priority)
+func(task *Task) Create(configObject config.ContextObject)error{
+	_,err := configObject.Db.Exec(dbInsertQuery, task.taskDescription, task.priority)
 	if err != nil {
 		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-		return err
-	}
-	return nil
-}
-
-func Delete(configObject config.ContextObject, taskId int) error {
-	_,err := configObject.Db.Exec(dbDeleteQuery,taskId)
-	if err != nil {
 		return err
 	}
 	return nil

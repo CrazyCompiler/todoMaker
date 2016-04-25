@@ -13,9 +13,9 @@ import (
 func AddTask(configObject config.ContextObject) http.HandlerFunc {
 	return func(res http.ResponseWriter, req *http.Request) {
 		req.ParseForm()
-		task := strings.Join(req.Form["task"], "")
+		taskDescription := strings.Join(req.Form["task"], "")
 		priority := strings.Join(req.Form["priority"], "")
-		err := models.Add(configObject, task, priority)
+		err := models.Add(configObject, taskDescription, priority)
 		if err != nil {
 			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 			res.WriteHeader(http.StatusInternalServerError)

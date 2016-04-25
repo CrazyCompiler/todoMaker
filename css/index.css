@@ -17,9 +17,10 @@
 }
 
 .todoList{
-    width:100%;
     text-align:center;
-    margin:10px;
+    width:800px;
+    height:500px;
+    margin-left:25%;
 }
 
 .deleteTask{
