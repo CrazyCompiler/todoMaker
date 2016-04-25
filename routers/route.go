@@ -10,6 +10,7 @@ import (
 
 func HandleRequests(configObject config.ContextObject) {
 	r := mux.NewRouter()
+	r.HandleFunc("/updatePriority",handlers.UpdateTaskPriority(configObject)).Methods("POST")
 	r.HandleFunc("/uploadCsv",handlers.UploadCsv(configObject)).Methods("POST")
 	r.HandleFunc("/deleteTask/{id:[0-9]+}", handlers.DeleteTask(configObject)).Methods("DELETE")
 	r.HandleFunc("/getAllTasks", handlers.GetTasks(configObject)).Methods("GET")

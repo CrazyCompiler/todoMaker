@@ -1,5 +1,3 @@
-var $scope = {};
-
 var addTask = function(){
     var task = $('#task').val();
     var priority = $('#priority').val();
@@ -7,13 +5,71 @@ var addTask = function(){
 
     $.post("/addTask",data,function(data,status){
         if(status == "success"){
-             $scope.gridOptions.api.refreshView();
+             getTaskLists();
         }
     })
 }
 
+var setSelectionOptions = ['High','Medium','Low'];
 
-$scope.gridOptions = {
+var update = function(taskId,dataToBeUpDated){
+    data = "taskId="+taskId+"&priority="+dataToBeUpDated;
+    $.post("/updatePriority",data,function(data,status){
+        if(status == "success"){
+            gridOptions.api.refreshView();
+        }
+    })
+}
+
+var customEditor = function(params) {
+    var editing = false;
+    var eCell = document.createElement('span');
+    var eLabel = document.createTextNode(params.value);
+    eCell.appendChild(eLabel);
+
+    var eSelect = document.createElement("select");
+
+    setSelectionOptions.forEach(function(item) {
+        var eOption = document.createElement("option");
+        eOption.setAttribute("value", item);
+        eOption.innerHTML = item;
+        eSelect.appendChild(eOption);
+    });
+    eSelect.value = params.value;
+
+    eCell.addEventListener('click', function () {
+        if (!editing) {
+            eCell.removeChild(eLabel);
+            eCell.appendChild(eSelect);
+            eSelect.focus();
+            editing = true;
+        }
+    });
+
+    eSelect.addEventListener('blur', function () {
+        if (editing) {
+            editing = false;
+            eCell.removeChild(eSelect);
+            eCell.appendChild(eLabel);
+        }
+    });
+
+    eSelect.addEventListener('change', function () {
+        if (editing) {
+            editing = false;
+            var newValue = eSelect.value;
+            update(params.data.TASKID,newValue);
+            params.data[params.colDef.field] = newValue;
+            eLabel.nodeValue = newValue;
+            eCell.removeChild(eSelect);
+            eCell.appendChild(eLabel);
+        }
+    });
+
+    return eCell;
+}
+
+var gridOptions = {
     debug: true,
     rowData: null,
     groupHeaders: true,
@@ -23,45 +79,48 @@ $scope.gridOptions = {
     rowHeight:40
 };
 
+var rowData;
 
+var displayData = function(data){
+            $('.todoList').html("");
+             var columnDefs = [
+                                {headerName: "Task_Id", field: "TASKID", width:100},
+                                {headerName: "Task Description", field: "TASK",width:600},
+                                {headerName: "Priority" , field: "PRIORITY", cellRenderer: customEditor,width : 100},
+                                {headerName: "" , field: "delete" , width:100 ,onCellClicked : deleteTask}
+                            ];
+
+            gridOptions.columnDefs =  columnDefs;
+            var eGridDiv = document.querySelector('.todoList');
+            new agGrid.Grid(eGridDiv, gridOptions);
+            gridOptions.api.setRowData(rowData);
+            gridOptions.api.sizeColumnsToFit();
+}
 
 var getTaskLists = function(player){
 	$.get("/getAllTasks","getAllTasks",function(data,status){
 		if(status == "success"){
-
-            var columnDefs = [
-                    {headerName: "Task_Id", field: "TASKID"},
-                    {headerName: "Task Description", field: "TASK"},
-                    {headerName: "Priority" , field: "PRIORITY"},
-                    {headerName: "" , field: "delete"}
-                ];
-
-            data = JSON.parse(data);
-            data.forEach(function(each){
+            rowData = JSON.parse(data);
+            rowData.forEach(function(each){
                 each.delete = " <td><div class='deleteTask' id="+each.TASKID+ "> ✗ </div>"
             })
-
-            $scope.gridOptions.columnDefs =  columnDefs;
-
-            var eGridDiv = document.querySelector('.todoList');
-            new agGrid.Grid(eGridDiv, $scope.gridOptions);
-            $scope.gridOptions.api.setRowData(data);
+            displayData(data);
 		}
-		$(".deleteTask").click(deleteTask);
 	});
 };
 
-var deleteTask = function(){
-    var dataToBeSend = {taskId:this.id};
+var deleteTask = function(params){
+    var dataToBeSend = {taskId:params.data.TASKID};
       $.ajax({
-        url: "/deleteTask/"+this.id,
+        url: "/deleteTask/"+params.data.TASKID,
         type: 'DELETE',
         data: dataToBeSend,
         traditional: true,
-        success:$scope.gridOptions.api.refreshView()
+        success: function() {
+            rowData.splice(rowData.indexOf(params.data),1);
+            displayData(rowData);
+        }
     });
-      $scope.gridOptions.api.refreshView();
-
 }
 
 var uploadCsv = function(){

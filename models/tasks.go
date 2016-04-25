@@ -11,6 +11,7 @@ const (
 	dbSelectQuery string = "select taskId,task,priority from tasks;"
 	dbInsertQuery string = "insert into tasks(task,priority)  VALUES($1,$2) returning taskId;"
 	dbDeleteQuery string = "delete from tasks where taskId=$1"
+	dbPriorityUpdateQuery string = "update tasks set priority=$1 where taskID=$2;"
 )
 
 func Get(configObject config.ContextObject) []byte {
@@ -34,6 +35,15 @@ func Add(configObject config.ContextObject, taskDescription string, priority str
 func Delete(configObject config.ContextObject, taskId int) error {
 	_,err := configObject.Db.Exec(dbDeleteQuery,taskId)
 	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func UpdatePriority(configObject config.ContextObject, taskId int, priority string)error{
+	_,err := configObject.Db.Exec(dbPriorityUpdateQuery, priority, taskId)
+	if err != nil {
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 		return err
 	}
 	return nil
