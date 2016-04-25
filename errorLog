@@ -142,3 +142,4 @@ Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($
 Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'insert into tasks(task,priority)  VALUES($1,$2) returning taskId;'
 Mon Jan _2 15:04:05 2006 : exec query 'insert into tasks(task,priority) VALUES($1,$2) returning taskId;', does not match regex 'insert into taskss'
 2016/04/25 14:02:41 http: multiple response.WriteHeader calls
+2016/04/25 14:42:39 http: multiple response.WriteHeader calls
