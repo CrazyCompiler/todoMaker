@@ -62,6 +62,21 @@ func UpdateTaskPriority(configObject config.ContextObject)http.HandlerFunc{
 	}
 }
 
+func UpdateTaskDescription(configObject config.ContextObject)http.HandlerFunc{
+	return func(res http.ResponseWriter,req *http.Request) {
+		req.ParseForm()
+		taskId := strings.Join(req.Form["taskId"], "")
+		data := strings.Join(req.Form["data"], "")
+		id,_ := strconv.Atoi(taskId)
+		err := models.UpdateTaskDescription(configObject, id,data)
+		if err != nil {
+			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+			res.WriteHeader(http.StatusInternalServerError)
+		}
+		res.WriteHeader(http.StatusCreated)
+	}
+}
+
 
 func UploadCsv(configObject config.ContextObject) http.HandlerFunc{
 	return func(res http.ResponseWriter,req *http.Request) {

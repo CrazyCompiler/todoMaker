@@ -1,22 +1,23 @@
 var addTask = function(){
     var task = $('#task').val();
     var priority = $('#priority').val();
-    var data = "task="+task+"&priority="+priority;
-
-    $.post("/addTask",data,function(data,status){
-        if(status == "success"){
-             getTaskLists();
-        }
-    })
+    if(task != ""){
+        var data = "task="+task+"&priority="+priority;
+        $.post("/addTask",data,function(data,status){
+            if(status == "success"){
+                 getTaskLists();
+            }
+        })
+    }
+    alert("Task cant be Empty")
 }
 
 var setSelectionOptions = ['High','Medium','Low'];
 
-var update = function(taskId,dataToBeUpDated){
+var updatePriority = function(taskId,dataToBeUpDated,params){
     data = "taskId="+taskId+"&priority="+dataToBeUpDated;
     $.post("/updatePriority",data,function(data,status){
         if(status == "success"){
-            gridOptions.api.refreshView();
         }
     })
 }
@@ -58,7 +59,7 @@ var customEditor = function(params) {
         if (editing) {
             editing = false;
             var newValue = eSelect.value;
-            update(params.data.TASKID,newValue);
+            updatePriority(params.data.TASKID,newValue);
             params.data[params.colDef.field] = newValue;
             eLabel.nodeValue = newValue;
             eCell.removeChild(eSelect);
@@ -85,7 +86,7 @@ var displayData = function(data){
             $('.todoList').html("");
              var columnDefs = [
                                 {headerName: "Task_Id", field: "TASKID", width:100},
-                                {headerName: "Task Description", field: "TASK",width:600},
+                                {headerName: "Task Description", field: "TASK",width:600,editable: true, newValueHandler: updateTask},
                                 {headerName: "Priority" , field: "PRIORITY", cellRenderer: customEditor,width : 100},
                                 {headerName: "" , field: "delete" , width:100 ,onCellClicked : deleteTask}
                             ];
@@ -96,6 +97,18 @@ var displayData = function(data){
             gridOptions.api.setRowData(rowData);
             gridOptions.api.sizeColumnsToFit();
 }
+
+
+var updateTask = function(params){
+     data = "taskId="+params.data.TASKID+"&data="+params.newValue;
+        $.post("/updateTaskDescription",data,function(data,status){
+            if(status == "success"){
+                getTaskLists();
+            }
+        })
+
+}
+
 
 var getTaskLists = function(player){
 	$.get("/getAllTasks","getAllTasks",function(data,status){
