@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6e707c-caee-44ad-8685-f52ba14cea39" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/taskHandler.go" afterPath="$PROJECT_DIR$/handlers/taskHandler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/tasks.go" afterPath="$PROJECT_DIR$/models/tasks.go" />
     </list>
     <ignored path="chatApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +30,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="taskHandler.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="taskHandler.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handlers/taskHandler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.8540146">
+              <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+              <folding>
+                <element signature="e#18#147#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/tasks.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6593674">
-              <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="e#16#146#0" expanded="true" />
               </folding>
@@ -126,8 +126,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/scripts/index.js" />
-        <option value="$PROJECT_DIR$/handlers/taskHandler.go" />
         <option value="$PROJECT_DIR$/models/tasks.go" />
+        <option value="$PROJECT_DIR$/handlers/taskHandler.go" />
       </list>
     </option>
   </component>
@@ -965,20 +965,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/taskHandler.go">
+    <entry file="file://$PROJECT_DIR$/models/tasks.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#146#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/tasks.go">
+    <entry file="file://$PROJECT_DIR$/handlers/taskHandler.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6593674">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.8540146">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
           <folding>
-            <element signature="e#16#146#0" expanded="true" />
+            <element signature="e#18#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
