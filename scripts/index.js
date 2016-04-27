@@ -9,7 +9,8 @@ var addTask = function(){
             }
         })
     }
-    alert("Task cant be Empty")
+    else
+        alert("Task cant be Empty")
 }
 
 var setSelectionOptions = ['High','Medium','Low'];
@@ -144,9 +145,9 @@ var uploadCsv = function(){
             data: formData,
             async: false,
             success: function (data) {
-                if(data){
+                if(data)
                     alert(data)
-                }
+                else
                     alert("File has been uploaded")
             },
             contentType: false,
