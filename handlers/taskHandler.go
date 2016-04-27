@@ -5,10 +5,9 @@ import (
 	"taskManager/models"
 	"taskManager/errorHandler"
 	"strconv"
-	"taskManager/fileReaders"
 	"net/http"
 	"taskManager/config"
-	"fmt"
+	"io/ioutil"
 )
 
 func AddTask(configObject config.ContextObject) http.HandlerFunc {
@@ -80,42 +79,70 @@ func UpdateTaskDescription(configObject config.ContextObject)http.HandlerFunc{
 
 func UploadCsv(configObject config.ContextObject) http.HandlerFunc{
 	return func(res http.ResponseWriter,req *http.Request) {
-		err := req.ParseMultipartForm(32 << 20)
+		file,_,err := req.FormFile("uploadFile")
 		if err != nil {
 			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
 		}
-		m := req.MultipartForm
-
-		files := m.File["uploadFile"]
-
-		for i,_ := range files{
-			file,err := files[i].Open()
-			defer file.Close()
-			if err != nil {
-				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-			}
-			b1 := make([]byte, 32 << 20)
-			_,err = file.Read(b1)
-			if err != nil {
-				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-			}
-			separatedData,err := fileReaders.ReadTaskCsv(string(b1))
-			if err != nil {
-				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-				fmt.Fprint(res,err.Error())
-				res.WriteHeader(http.StatusBadRequest)
-			}
-
-			for _, each := range separatedData {
-				err := models.Add(configObject,each.TASK ,each.PRIORITY)
-				if err != nil {
-					errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
-					res.WriteHeader(http.StatusInternalServerError)
-					return
-				}
-			}
-			res.WriteHeader(http.StatusCreated)
+		defer file.Close()
+		data,err := ioutil.ReadAll(file)
+		err = models.AddTaskByCsv(configObject,string(data))
+		if err != nil {
+			res.WriteHeader(http.StatusInternalServerError)
 		}
+		res.WriteHeader(http.StatusOK)
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//func UploadCsv(configObject config.ContextObject) http.HandlerFunc{
+//	return func(res http.ResponseWriter,req *http.Request) {
+//		err := req.ParseMultipartForm(32 << 20)
+//		if err != nil {
+//			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+//		}
+//		m := req.MultipartForm
+//
+//		files := m.File["uploadFile"]
+//
+//		for i,_ := range files{
+//			file,err := files[i].Open()
+//			defer file.Close()
+//			if err != nil {
+//				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+//			}
+//			b1 := make([]byte, 32 << 20)
+//			_,err = file.Read(b1)
+//			if err != nil {
+//				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+//			}
+//			separatedData,err := fileReaders.ReadTaskCsv(string(b1))
+//			if err != nil {
+//				errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+//				fmt.Fprint(res,err.Error())
+//				res.WriteHeader(http.StatusBadRequest)
+//			}
+//
+//			for _, each := range separatedData {
+//				err := models.Add(configObject,each.TASK ,each.PRIORITY)
+//				if err != nil {
+//					errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+//					res.WriteHeader(http.StatusInternalServerError)
+//					return
+//				}
+//			}
+//			res.WriteHeader(http.StatusCreated)
+//		}
+//	}
+//}
 

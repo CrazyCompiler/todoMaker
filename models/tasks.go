@@ -5,6 +5,7 @@ import (
 	"taskManager/converters"
 	"encoding/json"
 	"taskManager/config"
+	"taskManager/fileReaders"
 )
 
 const (
@@ -59,3 +60,21 @@ func UpdateTaskDescription(configObject config.ContextObject, taskId int, data s
 	return nil
 }
 
+
+func AddTaskByCsv(configObject config.ContextObject,data string) error{
+	separatedData,err := fileReaders.ReadTaskCsv(data)
+	if err != nil {
+		errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+		return err
+	}
+
+	for _, each := range separatedData {
+		err := Add(configObject,each.TASK ,each.PRIORITY)
+		if err != nil {
+			errorHandler.ErrorHandler(configObject.ErrorLogFile,err)
+			return err
+		}
+	}
+
+	return  nil
+}
