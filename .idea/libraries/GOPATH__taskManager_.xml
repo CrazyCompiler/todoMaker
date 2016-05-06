@@ -6,9 +6,13 @@
       <root url="file://$PROJECT_DIR$/../newproject" />
       <root url="file://$PROJECT_DIR$/../taskManagerServices" />
       <root url="file://$PROJECT_DIR$/../taskManagerWeb" />
+      <root url="file://$PROJECT_DIR$/../nginx" />
+      <root url="file://$PROJECT_DIR$/../google.golang.org" />
       <root url="file://$PROJECT_DIR$/../hello" />
       <root url="file://$PROJECT_DIR$/../github.com" />
+      <root url="file://$PROJECT_DIR$/../taskManagerLogin" />
       <root url="file://$PROJECT_DIR$/../interfaces" />
+      <root url="file://$PROJECT_DIR$/../golang.org" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
